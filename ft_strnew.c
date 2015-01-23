@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/24 21:51:45 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/01/22 07:26:15 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include <stdlib.h>
+
+char	*ft_strnew(size_t size)
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	char*	str;
+	size_t	i;
+
+	if (!(str = (char *)malloc((size + 1) * sizeof(char))))
+		return (NULL);
+	i = -1;
+	while (++i < size)
+		str[i] = '\0';
+	return (str);
 }

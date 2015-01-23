@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/20 19:39:52 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/01/23 02:29:22 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include <stdlib.h>
+
+char	*ft_strrchr(const char *s, int c)
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	int		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
+	{
+		if (s[i] == (char)c)
+			return (((char *)s) + i);
+		i--;
+	}
+	return (NULL);
 }
+

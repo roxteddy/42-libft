@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/19 14:01:54 by mfebvay           #+#    #+#             */
+/*   Updated: 2014/03/15 18:38:29 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include <unistd.h>
+
+int		ft_putendl_fd(char const *s, int fd)
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	int		len;
+
+	if (!s)
+		return ((int)write(fd, "(null)\n", 7));
+	len = 0;
+	while (s[len])
+		len++;
+	if ((len = (int)write(fd, s, len)) == -1)
+		return (len);
+	return (len + (int)write(fd, "\n", 1));
 }

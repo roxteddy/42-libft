@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/29 17:46:28 by mfebvay           #+#    #+#             */
+/*   Updated: 2013/12/02 17:17:00 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include "libft.h"
+
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	t_list	*next;
+
+	while (*alst)
+	{
+		next = (*alst)->next;
+		ft_lstdelone(alst, del);
+		*alst = next;
+	}
 }

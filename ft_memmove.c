@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/20 19:20:22 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/01/23 01:15:52 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include <stdlib.h>
+
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	char*	tmp;
+	int		i;
+
+	tmp = (char*)malloc(n * sizeof(char));
+	i = -1;
+	while (++i < (int)n)
+		tmp[i] = ((char *)src)[i];
+	while (n--)
+		((char *)dst)[n] = tmp[n];
+	free(tmp);
+	return (dst);
 }

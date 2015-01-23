@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/19 13:33:31 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/01/22 07:13:37 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include "libft.h"
+#include <stdlib.h>
+
+char			*ft_itoa(int n)
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	int		len;
+	int		start;
+	char	*str;
+
+	len = ft_nbrlen(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	str = (char *)malloc((len + 1) * sizeof(char));
+	start = 0;
+	if (n < 0)
+	{
+		str[0] = '-';
+		n *= -1;
+		start++;
+	}
+	str[len] = '\0';
+	while (--len >= start)
+	{
+		str[len] = n % 10 + '0';
+		n /= 10;
+	}
+	return (str);
 }

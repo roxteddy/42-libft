@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 19:47:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 05:44:18 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/11/29 17:48:36 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/01/23 04:04:16 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_isalnum(int c)
+#include "libft.h"
+
+t_list	*ft_lstmap(t_list *lst, t_list * (*f)(t_list *elem))
 {
-	return ((c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= '0' && c <= '9'));
+	t_list	*new;
+	t_list	*current;
+	t_list	*ret;
+
+	new = NULL;
+	current = NULL;
+	ret = NULL;
+	if (!lst)
+		return (NULL);
+	while (lst)
+	{
+		new = f(lst);
+		if (!ret)
+			ret = new;
+		if (current)
+			current->next = new;
+		current = new;
+		lst = lst->next;
+	}
+	return (ret);
 }
