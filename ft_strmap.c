@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 18:02:18 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/23 03:17:20 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/28 17:55:08 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmap(char const *s, char (*f)(char))
 {
 	int		i;
-	char*	str;
+	char	*str;
 
 	i = 0;
 	while (s[i])

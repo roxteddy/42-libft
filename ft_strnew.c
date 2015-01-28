@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 21:51:45 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/22 07:26:15 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/28 18:12:53 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnew(size_t size)
 {
-	char*	str;
+	char	*str;
 	size_t	i;
 
 	if (!(str = (char *)malloc((size + 1) * sizeof(char))))

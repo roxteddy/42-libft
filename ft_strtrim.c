@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 19:48:12 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/23 03:53:38 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/28 18:14:55 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s)
 	size_t	len;
 	size_t	start;
 	size_t	i;
-	char*	str;
+	char	*str;
 
 	len = 0;
 	while (s[len])
@@ -27,7 +27,7 @@ char	*ft_strtrim(char const *s)
 		len--;
 	start = 0;
 	while (start < len && (s[start] == ' '
-						   || s[start]== '\n' || s[start] == '\t'))
+	|| s[start] == '\n' || s[start] == '\t'))
 		start++;
 	len -= start;
 	if (!(str = (char *)malloc((len + 1) * sizeof(char))))

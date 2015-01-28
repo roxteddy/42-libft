@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 19:44:24 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/23 02:56:50 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/28 17:54:43 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
-	char*	str;
+	char	*str;
 
 	i = 0;
 	while (s1[i])

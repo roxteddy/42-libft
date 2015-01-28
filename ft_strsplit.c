@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 21:02:28 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/23 03:41:21 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/28 18:13:35 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static size_t	ft_splitlen(char const *s, char c)
 	return (len);
 }
 
-char**			ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**strtab;
 	size_t	i;

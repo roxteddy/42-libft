@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:44:38 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/23 03:00:10 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/28 17:20:48 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int		ft_putchar(char c)
 {
-	return((int)write(1, &c, 1));
+	return ((int)write(1, &c, 1));
 }
