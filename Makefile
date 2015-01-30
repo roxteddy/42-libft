@@ -6,12 +6,14 @@
 #    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/20 19:47:44 by mfebvay           #+#    #+#              #
-#    Updated: 2015/01/29 21:51:21 by mfebvay          ###   ########.fr        #
+#    Updated: 2015/01/30 20:37:06 by mfebvay          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
+.PHONY: all clean fclean re
+
 NAME	= libft.a
-CC		= cc
+CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
 SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
@@ -26,14 +28,12 @@ SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_nbrlen.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
-		ft_lstmap.c ft_lstnew.c ft_pow.c ft_lstlen.c
+		ft_lstmap.c ft_lstnew.c ft_pow.c ft_lstlen.c ft_lstrot.c \
+		ft_lstrotback.c ft_lstswap.c ft_lstpushback.c
 
 OBJ		= $(SRC:%.c=%.o)
 
-all: $(NAME) main
-
-main: main.c
-	$(CC) main.c -L. -lft
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)

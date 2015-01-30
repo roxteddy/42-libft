@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/29 21:35:06 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/29 21:36:57 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/30 20:42:44 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int		ft_pow(int nb, int pow)
 	ret = 1;
 	while (pow--)
 		ret *= nb;
-	return ret;
+	return (ret);
 }

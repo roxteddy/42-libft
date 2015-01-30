@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 20:03:44 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/29 21:50:47 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/30 20:32:18 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t				ft_nbrlen(int n);
 int					ft_pow(int nb, int pow);
 size_t				ft_lstlen(t_list *alst);
+t_list				*ft_lstrot(t_list **alst);
+t_list				*ft_lstrotback(t_list **alst);
+t_list				*ft_lstswap(t_list **alst);
+void				ft_lstpushback(t_list **alst, t_list *new);
 #endif

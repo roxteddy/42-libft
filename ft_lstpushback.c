@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstrot.c                                        :+:      :+:    :+:   */
+/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/29 21:55:35 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/30 20:42:05 by mfebvay          ###   ########.fr       */
+/*   Created: 2015/01/30 19:53:16 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/01/30 19:59:24 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstrot(t_list **alst)
+void	ft_lstpushback(t_list **alst, t_list *new)
 {
-	t_list	*head;
 	t_list	*current;
 
-	head = *alst;
 	current = *alst;
-	if (!current || !current->next)
-		return (*alst);
-	*alst = current->next;
 	while (current->next)
 		current = current->next;
-	current->next = head;
-	head->next = NULL;
-	return (*alst);
+	current->next = new;
 }
