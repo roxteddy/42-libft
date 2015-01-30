@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 20:03:44 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/28 18:21:08 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/29 21:50:47 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,14 @@ int					ft_putchar_fd(char c, int fd);
 int					ft_putstr_fd(char const *s, int fd);
 int					ft_putendl_fd(char const *s, int fd);
 int					ft_putnbr_fd(int n, int fd);
-size_t				ft_nbrlen(int n);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+size_t				ft_nbrlen(int n);
+int					ft_pow(int nb, int pow);
+size_t				ft_lstlen(t_list *alst);
 #endif

@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 20:02:40 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/23 03:47:49 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/01/29 21:39:45 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int		main(void)
 	char** strtab = ft_strsplit("***salut****!**", '*');
 
 	printf("ft_strtrim(\"\t\n  \tAAA \t BBB\t\n  \t\") : -%s-\n", ft_strtrim("\t\n  \tAAA \t BBB\t\n  \t"));
+
+	printf("ft_pow(2, 3) = %d\n", ft_pow(2, 3));
 
 	return (0);
 }
