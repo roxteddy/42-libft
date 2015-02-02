@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 20:03:44 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/30 20:32:18 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/02/02 17:46:02 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ t_list				*ft_lstrot(t_list **alst);
 t_list				*ft_lstrotback(t_list **alst);
 t_list				*ft_lstswap(t_list **alst);
 void				ft_lstpushback(t_list **alst, t_list *new);
+void				ft_freecontent(void *content, size_t content_size);
 #endif
