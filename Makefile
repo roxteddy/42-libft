@@ -6,7 +6,7 @@
 #    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/20 19:47:44 by mfebvay           #+#    #+#              #
-#    Updated: 2015/02/03 22:10:57 by mfebvay          ###   ########.fr        #
+#    Updated: 2015/02/04 20:24:11 by mfebvay          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -15,6 +15,7 @@
 NAME	= libft.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
+INC		= -Iincludes/
 
 SRC		= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		ft_memchr.c ft_memcmp.c ft_strlen.c ft_strdup.c ft_strcpy.c \
@@ -40,7 +41,7 @@ $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
