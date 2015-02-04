@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/29 21:55:35 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/01/30 20:42:05 by mfebvay          ###   ########.fr       */
+/*   Created: 2015/01/29 21:59:23 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/02/03 21:08:47 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ t_list	*ft_lstrot(t_list **alst)
 	t_list	*head;
 	t_list	*current;
 
-	head = *alst;
 	current = *alst;
 	if (!current || !current->next)
 		return (*alst);
-	*alst = current->next;
-	while (current->next)
+	while (current->next->next)
 		current = current->next;
-	current->next = head;
-	head->next = NULL;
+	head = current->next;
+	current->next = NULL;
+	head->next = *alst;
+	*alst = head;
 	return (*alst);
 }
