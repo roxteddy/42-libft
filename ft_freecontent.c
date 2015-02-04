@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpushback.c                                   :+:      :+:    :+:   */
+/*   ft_freecontent.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/30 19:53:16 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/02/02 19:22:54 by mfebvay          ###   ########.fr       */
+/*   Created: 2013/12/04 20:52:51 by mfebvay           #+#    #+#             */
+/*   Updated: 2015/02/02 17:44:53 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	ft_lstpushback(t_list **alst, t_list *new)
+void	ft_freecontent(void *content, size_t content_size)
 {
-	t_list	*current;
-
-	current = *alst;
-	if (current)
-	{
-		while (current->next)
-			current = current->next;
-		current->next = new;
-	}
-	else
-		*alst = new;
+	free(content);
+	(void)content_size;
 }
